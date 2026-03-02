@@ -165,7 +165,7 @@
     margin-top:12px;
   }
 
-  .actions a, .actions button{
+  .actions a{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -182,9 +182,8 @@
   }
   
   .btn-google { background:linear-gradient(135deg,var(--mendel),#34d399); }
-  .btn-apple { background:linear-gradient(135deg,#0f172a,#475569); }
 
-  .actions a:hover, .actions button:hover{
+  .actions a:hover{
     filter:brightness(.95);
     transform:translateY(-1px);
   }
@@ -323,30 +322,6 @@ function overlaps(){
  return hits;
 }
 
-function downloadICS(cls, start, end, room) {
-  const icsData = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//IIS Mendel//Consigli di Classe//IT',
-    'BEGIN:VEVENT',
-    'SUMMARY:CdC ' + cls,
-    'DTSTART:' + start,
-    'DTEND:' + end,
-    'LOCATION:Aula ' + room + ' - IIS Gregorio Mendel',
-    'DESCRIPTION:Consiglio di Classe',
-    'END:VEVENT',
-    'END:VCALENDAR'
-  ].join('\n');
-
-  const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
-  const link = document.createElement('a');
-  link.href = window.URL.createObjectURL(blob);
-  link.setAttribute('download', 'CdC_' + cls.replace(/\//g, '_') + '.ics');
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
 function render(){
  const q=document.getElementById("q").value.toLowerCase();
  const grid=document.getElementById("grid");
@@ -380,9 +355,6 @@ function render(){
           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=CdC ${e[0]}&dates=${e[1]}/${e[2]}&location=Aula ${e[3]} - IIS Gregorio Mendel">
           📅 Google Calendar
        </a>
-       <button class="btn-apple" onclick="downloadICS('${e[0]}', '${e[1]}', '${e[2]}', '${e[3]}')">
-          🍎 Apple Calendar
-       </button>
      </div>
    </div>`;
   });
