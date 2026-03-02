@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Consigli di Classe – Marzo 2026</title>
+<style>
+  :root{
+    --mendel:#1f8f4a;
+    --mendel-dark:#157a3d;
+    --mendel-soft:#e6f7ee;
+    --ink:#0f172a;
+    --muted:#475569;
+    --bg:#f3f6fb;
+    --card:#ffffff;
+    --line:#dbe3ec;
+    --shadow:0 14px 32px rgba(2,6,23,.12);
+    --radius:16px;
+    --danger:#dc2626;
+    --danger-bg:#fff1f2;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
+    background:var(--bg);
+    color:var(--ink);
+  }
+
+  .container{
+    max-width:1200px;
+    margin:26px auto;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+
+  header{
+    padding:22px 26px 18px;
+    background:linear-gradient(135deg,var(--mendel),#34d399);
+    color:#fff;
+    border-bottom:4px solid var(--mendel-dark);
+  }
+
+  h1{
+    margin:0;
+    font-size:1.55rem;
+    font-weight:800;
+    letter-spacing:.2px;
+  }
+
+  .sub{
+    margin-top:6px;
+    opacity:.92;
+    font-weight:600;
+  }
+
+  main{
+    padding:22px 24px 26px;
+  }
+
+  .notice{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px 16px;
+    margin-bottom:14px;
+    background:#fafbff;
+  }
+
+  .notice strong{
+    display:block;
+    margin-bottom:8px;
+    font-weight:800;
+    font-size:1.1rem;
+    color: var(--mendel-dark);
+  }
+
+  .notice.danger{
+    background:var(--danger-bg);
+    border-color:#fecaca;
+  }
+
+  .search{
+    margin:14px 0 18px;
+    display:flex;
+    justify-content:flex-start;
+  }
+
+  .search input{
+    width:min(520px, 100%);
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid #d1d5db;
+    font-size:1rem;
+    outline:none;
+    background:#fff;
+  }
+
+  .search input:focus{
+    border-color:#86efac;
+    box-shadow:0 0 0 4px rgba(34,197,94,.16);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+    gap:16px;
+  }
+
+  .day{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    background:#fff;
+  }
+
+  .day h2{
+    margin:0 0 10px;
+    font-size:1.05rem;
+    font-weight:850;
+    text-transform:capitalize;
+  }
+
+  .event{
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:12px;
+    margin-bottom:10px;
+    position:relative;
+  }
+
+  .event:last-child{margin-bottom:0}
+
+  .event::before{
+    content:"";
+    position:absolute;
+    left:0; top:0; bottom:0;
+    width:4px;
+    background:linear-gradient(135deg,var(--mendel),#34d399);
+    border-top-left-radius:14px;
+    border-bottom-left-radius:14px;
+  }
+
+  .event.overlap{
+    border:2px solid var(--danger);
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+  }
+
+  .event.overlap::before{
+    background:var(--danger);
+    width: 8px;
+  }
+
+  .who{font-weight:850; font-size:1.1rem; display:flex; justify-content:space-between}
+  .room{font-size:0.9rem; font-weight:600; color:var(--mendel-dark); background:var(--mendel-soft); padding:2px 8px; border-radius:6px;}
+  .time{color:var(--muted);font-size:.95rem;margin-top:4px}
+
+  .actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+
+  .actions a, .actions button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:8px 12px;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.85rem;
+    border:none;
+    cursor:pointer;
+    transition:filter .12s ease, transform .12s ease;
+  }
+  
+  .btn-google { background:linear-gradient(135deg,var(--mendel),#34d399); }
+  .btn-apple { background:linear-gradient(135deg,#0f172a,#475569); }
+
+  .actions a:hover, .actions button:hover{
+    filter:brightness(.95);
+    transform:translateY(-1px);
+  }
+
+  footer{
+    padding:14px 18px;
+    background:#f8fafc;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:.9rem;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width:560px){
+    .container{margin:14px}
+    header{padding:18px 18px 16px}
+    main{padding:18px}
+    h1{font-size:1.35rem}
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Consigli di Classe – Marzo 2026</h1>
+<div class="sub">IIS “Gregorio Mendel” · 10–20 marzo 2026</div>
+</header>
+
+<main>
+<div class="notice">
+  <strong>Ordine del Giorno (O.d.G.)</strong>
+  <div style="margin-top:6px;line-height:1.4">
+    <ol style="margin:0;padding-left:18px;color:#0f172a">
+      <li>Andamento didattico-disciplinare e verifica piani di lavoro.</li>
+      <li>Verifica attività di recupero primo quadrimestre.</li>
+      <li>Verifica/programmazione educazione civica.</li>
+      <li>Verifica PEI/PDP ed eventuali aggiornamenti.</li>
+      <li>Monitoraggio orientamento (classi 3^, 4^, 5^) e scuola-lavoro (2^-3^-4^ IeFP, 3^-4^-5^ Tecnico).</li>
+      <li>Classi 5°A, 5°C, 5°PB: valutazione formazione privatisti per requisiti maturità.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="notice danger" id="overlapInfo" style="display:none;"></div>
+
+<div class="search">
+<input id="q" placeholder="Cerca classe (es. 5PA, 3ST, 2B)…" oninput="render()">
+</div>
+
+<div class="grid" id="grid"></div>
+</main>
+
+<footer>
+<div>PAgina creata dal Team Digitale per IIS MENDEL - Villa Cortese (MI)</div>
+</footer>
+</div>
+
+<script>
+const EVENTS=[
+  ["4B", "20260310T150000", "20260310T160000", "8"],
+  ["5B", "20260310T160000", "20260310T170000", "9"],
+  ["3PC", "20260310T170000", "20260310T180000", "8"],
+  ["5A", "20260311T150000", "20260311T160000", "8"],
+  ["4A", "20260311T160000", "20260311T170000", "9"],
+  ["2PA", "20260311T160000", "20260311T170000", "7"],
+  ["1PA", "20260311T170000", "20260311T180000", "8"],
+  ["3PA", "20260312T150000", "20260312T160000", "7"],
+  ["4PA", "20260312T160000", "20260312T170000", "8"],
+  ["5PA", "20260312T170000", "20260312T180000", "7"],
+  ["1PB", "20260313T150000", "20260313T160000", "7"],
+  ["5C", "20260313T150000", "20260313T160000", "8"],
+  ["1PC", "20260313T160000", "20260313T170000", "7"],
+  ["4C", "20260313T160000", "20260313T170000", "9"],
+  ["2C", "20260313T170000", "20260313T180000", "8"],
+  ["1C", "20260316T160000", "20260316T170000", "8"],
+  ["3/4 SP", "20260316T160000", "20260316T170000", "7"],
+  ["3C", "20260316T170000", "20260316T180000", "9"],
+  ["5 SP", "20260316T170000", "20260316T180000", "8"],
+  ["5PB", "20260317T150000", "20260317T160000", "8"],
+  ["2PB", "20260317T160000", "20260317T170000", "9"],
+  ["2D", "20260317T170000", "20260317T180000", "8"],
+  ["3A", "20260318T150000", "20260318T160000", "8"],
+  ["2A", "20260318T160000", "20260318T170000", "9"],
+  ["3D", "20260318T160000", "20260318T170000", "7"],
+  ["1A", "20260318T170000", "20260318T180000", "8"],
+  ["4D", "20260318T170000", "20260318T180000", "9"],
+  ["3PB", "20260319T150000", "20260319T160000", "7"],
+  ["4PB", "20260319T160000", "20260319T170000", "8"],
+  ["3/4 ST", "20260319T160000", "20260319T170000", "9"],
+  ["5D", "20260319T170000", "20260319T180000", "7"],
+  ["5ST", "20260319T170000", "20260319T180000", "9"],
+  ["3B", "20260320T150000", "20260320T160000", "7"],
+  ["1B", "20260320T160000", "20260320T170000", "8"],
+  ["2B", "20260320T170000", "20260320T180000", "7"]
+];
+
+const SOFT_COLORS = [
+  "#e3f2fd", "#fce4ec", "#e8f5e9", "#fff3e0", "#e0f2f1", 
+  "#f9fbe7", "#fffde7", "#e1f5fe", "#f3e5f5", "#f1f8e9", 
+  "#fff8e1", "#e0f7fa", "#ede7f6", "#cfd8dc", "#dcedc8", 
+  "#ffecb3", "#ffe0b2", "#c5cae9", "#d1c4e9", "#b2dfdb", 
+  "#b2ebf2", "#f8bbd0", "#f0f4c3", "#fff9c4", "#d7ccc8", 
+  "#ffccbc"
+];
+
+const distinctClasses = [...new Set(EVENTS.map(e => e[0]))];
+const CLASS_COLOR_MAP = {};
+distinctClasses.forEach((cls, index) => {
+  CLASS_COLOR_MAP[cls] = SOFT_COLORS[index % SOFT_COLORS.length];
+});
+
+function m(ts){return parseInt(ts.slice(9,11))*60+parseInt(ts.slice(11,13))}
+function time(ts){return ts.slice(9,11)+":"+ts.slice(11,13)}
+function day(ts){
+ const d=new Date(ts.slice(0,4)+"-"+ts.slice(4,6)+"-"+ts.slice(6,8));
+ return d.toLocaleDateString("it-IT",{weekday:"long",day:"2-digit",month:"long"});
+}
+
+function overlaps(){
+ const byDay={};
+ EVENTS.forEach(e=>{
+  const d=e[1].slice(0,8);
+  (byDay[d]??=[]).push(e);
+ });
+ const hits=[];
+ Object.values(byDay).forEach(arr=>{
+  arr.sort((a,b)=>m(a[1])-m(b[1]));
+  for(let i=0;i<arr.length;i++)
+   for(let j=i+1;j<arr.length;j++)
+    if(m(arr[j][1])<m(arr[i][2]) && arr[j][3] === arr[i][3]) hits.push(arr[i][0]+" / "+arr[j][0] + " (Aula "+arr[i][3]+")");
+ });
+ return hits;
+}
+
+function downloadICS(cls, start, end, room) {
+  const icsData = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//IIS Mendel//Consigli di Classe//IT',
+    'BEGIN:VEVENT',
+    'SUMMARY:CdC ' + cls,
+    'DTSTART:' + start,
+    'DTEND:' + end,
+    'LOCATION:Aula ' + room + ' - IIS Gregorio Mendel',
+    'DESCRIPTION:Consiglio di Classe',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\n');
+
+  const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.setAttribute('download', 'CdC_' + cls.replace(/\//g, '_') + '.ics');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function render(){
+ const q=document.getElementById("q").value.toLowerCase();
+ const grid=document.getElementById("grid");
+ grid.innerHTML="";
+ const filtered=EVENTS.filter(e=>e[0].toLowerCase().includes(q));
+ const byDay={};
+ filtered.forEach(e=>{
+  const d=e[1].slice(0,8);
+  (byDay[d]??=[]).push(e);
+ });
+
+ const oList=overlaps();
+ 
+ Object.keys(byDay).sort().forEach(d=>{
+  const box=document.createElement("div");
+  box.className="day";
+  box.innerHTML="<h2>"+day(d)+"</h2>";
+  byDay[d].forEach(e=>{
+   const isOverlap = oList.some(o => o.includes(e[0]) && o.includes("Aula "+e[3]));
+   const tileColor = CLASS_COLOR_MAP[e[0]];
+   
+   box.innerHTML+=`
+   <div class="event ${isOverlap?'overlap':''}" style="background-color: ${tileColor};">
+     <div class="who">
+        <span>Classe ${e[0]}</span>
+        <span class="room">Aula ${e[3]}</span>
+     </div>
+     <div class="time">${time(e[1])}–${time(e[2])}</div>
+     <div class="actions">
+       <a class="btn-google" target="_blank"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=CdC ${e[0]}&dates=${e[1]}/${e[2]}&location=Aula ${e[3]} - IIS Gregorio Mendel">
+          📅 Google
+       </a>
+       <button class="btn-apple" onclick="downloadICS('${e[0]}', '${e[1]}', '${e[2]}', '${e[3]}')">
+          🍎 Apple / iOS
+       </button>
+     </div>
+   </div>`;
+  });
+  grid.appendChild(box);
+ });
+
+ const o=overlaps();
+ const info=document.getElementById("overlapInfo");
+ if(o.length===0){
+  info.style.display = "none";
+ }else{
+  info.style.display = "block";
+  info.innerHTML="<strong>Sovrapposizioni rilevate (stessa aula)</strong><br>"+o.join(", ");
+ }
+}
+
+render();
+</script>
+</body>
+</html>
